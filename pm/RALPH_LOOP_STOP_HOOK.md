@@ -30,11 +30,11 @@ Ralph Loop:
 
 | 项目 | 值 |
 |------|-----|
-| **项目名称** | exomind-model（原 exomind-model） |
+| **项目名称** | exomind-model（原 voice-ime） |
 | **核心定位** | 语音输入输出引擎，提供 ASR/TTS API 接口 |
 | **服务端口** | 1921 |
 | **技术栈** | Python + FastAPI + uv |
-| **项目路径** | `~/ExoMind-Obsidian-HailayLin/1-Projects/exomind-model/` |
+| **项目路径** | `~/ExoMind-Obsidian-HailayLin/1-Projects/voice-ime/` |
 
 **当前任务（迭代13）**：
 - ✅ FastAPI 服务（1921端口）
@@ -48,7 +48,7 @@ Ralph Loop:
 ```markdown
 Ralph Loop: 读取 agent.md 和 RALPH_LOOP.md，记住你是谁和工作流程。
 
-你是 exomind-model（原 exomind-model）的开发 Agent。你的核心职责是构建本地语音识别与合成服务，提供 ASR/TTS API 接口，让其他工具通过 HTTP API 调用。
+你是 exomind-model（原 voice-ime）的开发 Agent。你的核心职责是构建本地语音识别与合成服务，提供 ASR/TTS API 接口，让其他工具通过 HTTP API 调用。
 
 参考 RALPH_LOOP.md 中的标准流程（当前版本: v1.4.1）。
 
