@@ -90,7 +90,7 @@
 ### 3.3 服务架构
 
 ```
-voice-ime/                          # 后端服务
+exomind-model/                          # 后端服务
 ├── asr/                            # ASR 引擎模块
 ├── tts/                            # TTS 引擎模块
 ├── speaker/                        # 说话人识别模块

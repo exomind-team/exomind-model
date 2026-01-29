@@ -23,7 +23,7 @@
 ### 安装依赖
 
 ```bash
-cd voice-ime
+cd exomind-model
 uv sync
 ```
 
@@ -45,14 +45,14 @@ uv run pytest
 
 ```bash
 # 复制服务配置
-cp deploy/voice-ime.service ~/.config/systemd/user/
+cp deploy/exomind-model.service ~/.config/systemd/user/
 
 # 启用并启动服务
-systemctl --user enable voice-ime
-systemctl --user start voice-ime
+systemctl --user enable exomind-model
+systemctl --user start exomind-model
 
 # 查看日志
-journalctl --user -u voice-ime -f
+journalctl --user -u exomind-model -f
 ```
 
 ## API 文档
@@ -105,7 +105,7 @@ curl -X POST http://localhost:1921/v1/tts/synthesize \
 ## 项目结构
 
 ```
-voice-ime/
+exomind-model/
 ├── service/              # FastAPI 服务
 │   ├── main.py           # 服务入口
 │   ├── config.py         # 配置
@@ -120,7 +120,7 @@ voice-ime/
 ├── tests/                # 测试文件
 ├── specs/                # 技术规格文档
 ├── deploy/               # 部署配置
-│   └── voice-ime.service # systemd 服务
+│   └── exomind-model.service # systemd 服务
 ├── pm/                   # 项目管理
 │   ├── agent.md          # Agent 配置
 │   ├── input.md          # 任务队列

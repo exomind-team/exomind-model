@@ -65,13 +65,13 @@
 ```
 Voice-ime 项目结构
 
-voice-ime/                          # 后端服务 (当前项目)
+exomind-model/                          # 后端服务 (当前项目)
 ├── asr/
 ├── tts/
 ├── service/                        # 新增 FastAPI 服务
 └── voice_ime.py                    # CLI 保持兼容
 
-voice-ime-web/                      # 前端项目 (独立仓库，后续创建)
+exomind-model-web/                      # 前端项目 (独立仓库，后续创建)
 ├── src/
 │   ├── components/
 │   ├── pages/
@@ -312,7 +312,7 @@ else:
 ## 5. 文件结构
 
 ```
-voice-ime/
+exomind-model/
 ├── asr/                      # 现有 (复用)
 │   ├── __init__.py
 │   ├── base.py
@@ -407,10 +407,10 @@ curl -X POST http://localhost:1921/v1/tts/synthesize \
 ## 9. NGINX 配置示例
 
 ```nginx
-# /etc/nginx/sites-available/voice-ime
+# /etc/nginx/sites-available/exomind-model
 server {
     listen 80;
-    server_name voice-ime.local;
+    server_name exomind-model.local;
 
     location / {
         proxy_pass http://127.0.0.1:1921;
@@ -434,7 +434,7 @@ server {
 
 **启用配置**：
 ```bash
-sudo ln -s /etc/nginx/sites-available/voice-ime /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/exomind-model /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 ```
 

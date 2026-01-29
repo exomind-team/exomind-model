@@ -11,7 +11,7 @@ from pathlib import Path
 
 # 添加项目根目录到路径
 FILE = Path(__file__).resolve()
-ROOT = FILE.parents[2] / "voice-ime"
+ROOT = FILE.parents[2] / "exomind-model"
 sys.path.insert(0, str(ROOT))
 
 from privacy_gateway.pii.patterns import PIIType, detect_pii_type

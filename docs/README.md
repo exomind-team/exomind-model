@@ -59,7 +59,7 @@ sudo pacman -S portaudio
 
 ```bash
 # 克隆项目
-cd 1-Projects/voice-ime
+cd 1-Projects/exomind-model
 
 # 使用 uv 安装依赖
 uv pip install -e .
@@ -378,7 +378,7 @@ pkill -f voice_ime.py
 ### 8.1 目录结构
 
 ```
-voice-ime/
+exomind-model/
 ├── voice_ime.py        # 主程序
 ├── asr/                # ASR 引擎模块
 │   ├── base.py         # 抽象基类

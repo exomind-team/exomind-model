@@ -14,7 +14,7 @@ class PrivacyGatewaySettings(BaseSettings):
     enabled: bool = False  # 默认关闭，需手动启用
 
     # 存储配置
-    token_store_path: Path = Path("~/.cache/voice-ime/pii_tokens.json")
+    token_store_path: Path = Path("~/.cache/exomind-model/pii_tokens.json")
 
     # 跳过模式（不进行隐私检测的文本模式）
     bypass_patterns: list = []

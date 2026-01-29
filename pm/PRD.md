@@ -98,7 +98,7 @@
 | T-19 | ASR API 端点 | ⏳ | P0 | POST /v1/asr/transcribe |
 | T-20 | TTS API 端点 | ⏳ | P0 | POST /v1/tts/synthesize |
 | T-21 | Agent 文档 API | ⏳ | P0 | GET /v1/docs/agent ⭐ |
-| T-22 | 前端集成 (独立项目) | ⏳ | P1 | voice-ime-web TypeScript |
+| T-22 | 前端集成 (独立项目) | ⏳ | P1 | exomind-model-web TypeScript |
 
 ---
 
@@ -174,7 +174,7 @@ volume_db = 25
 ### 5.2 服务架构
 
 ```
-voice-ime/
+exomind-model/
 ├── asr/                            # ASR 引擎模块
 ├── tts/                            # TTS 引擎模块
 ├── speaker/                        # 说话人识别模块
@@ -212,7 +212,7 @@ voice-ime/
 
 ### 6.1 四项核心任务
 
-| # | 任务 | 说明 | voice-ime 关联 |
+| # | 任务 | 说明 | exomind-model 关联 |
 |---|------|------|----------------|
 | 1 | **全部集成到一个网页** | 语音输入 → Agent → 小荷 → 执行 → 输出 | 提供 ASR/TTS API |
 | 2 | **有生命的Agent** | 能量额度反馈，参考 MiniMax Agent | API 文档 + 资源监控 |
@@ -223,7 +223,7 @@ voice-ime/
 
 | 项目 | 路径 | 说明 |
 |------|------|------|
-| **VoiceIME** | `voice-ime/` | 语音输入项目（当前） |
+| **VoiceIME** | `exomind-model/` | 语音输入项目（当前） |
 | **ExoMind** | `ExoMind-Team/modules/Projects/exomind/` | 外心核心项目 |
 | **ExoBuffer** | `ExoMind-Team/modules/Projects/ExoBuffer/` | 外部缓冲区 |
 

@@ -3,7 +3,7 @@
 > 版本：v1.7
 > 创建时间：2026-01-27
 > 更新时间：2026-01-29 14:40
-> Agent：voice-ime
+> Agent：exomind-model
 > 说明：记录项目经验、技术决策、踩坑记录
 
 ---
@@ -24,7 +24,7 @@
 4. `pm/memory/long-term.md` - 长期记忆
 
 **ExoMind 四项核心任务**：
-| # | 任务 | voice-ime 关联 |
+| # | 任务 | exomind-model 关联 |
 |---|------|----------------|
 | 1 | 全部集成到一个网页 | 提供 ASR/TTS API |
 | 2 | 有生命的Agent | 能量额度反馈 |
@@ -594,12 +594,12 @@ gh pr create --title "feat: FastAPI 服务实现" --body "..."
 uv run python -m service.main
 
 # 服务模式（用户级 systemd）
-systemctl --user start voice-ime
-systemctl --user enable voice-ime
+systemctl --user start exomind-model
+systemctl --user enable exomind-model
 
 # 服务管理
-systemctl --user status voice-ime
-journalctl --user -u voice-ime -f
+systemctl --user status exomind-model
+journalctl --user -u exomind-model -f
 
 # 部署后测试
 curl http://localhost:1921/health
@@ -613,7 +613,7 @@ curl http://localhost:1921/v1/docs/agent
 ### PG-01: 隐私保护网关 MVP
 - **日期**: 2026-01-29
 - **状态**: DEPRECATED（暂停）
-- **决策**: 暂不集成到 voice-ime 核心项目
+- **决策**: 暂不集成到 exomind-model 核心项目
 - **理由**: 当前优先级为 ASR/TTS 核心功能，隐私网关可作为独立项目
 - **技术积累**:
   - PII 正则检测模式 (`pii/patterns.py`)

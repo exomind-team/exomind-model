@@ -1,11 +1,11 @@
 [Unit]
 Description=Voice-ime FastAPI Service
-Documentation=https://github.com/Hailaylin/ExoMind-Obsidian-HailayLin/tree/master/1-Projects/voice-ime
+Documentation=https://github.com/Hailaylin/ExoMind-Obsidian-HailayLin/tree/master/1-Projects/exomind-model
 After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=%h/ExoMind-Obsidian-HailayLin/1-Projects/voice-ime
+WorkingDirectory=%h/ExoMind-Obsidian-HailayLin/1-Projects/exomind-model
 ExecStart=%h/.local/bin/uv run python -m service.main
 Restart=always
 RestartSec=10
@@ -19,7 +19,7 @@ MemoryHigh=3G
 # 日志配置
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=voice-ime
+SyslogIdentifier=exomind-model
 
 [Install]
 WantedBy=default.target

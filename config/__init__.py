@@ -71,8 +71,8 @@ def create_default_config(path: str = "config.yaml") -> str:
         },
         "global": {
             "log_level": "INFO",
-            "log_file": "logs/voice-ime.log",
-            "temp_dir": "/tmp/voice-ime",
+            "log_file": "logs/exomind-model.log",
+            "temp_dir": "/tmp/exomind-model",
             "debug": False,
         },
         "recorder": {

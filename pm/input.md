@@ -1,4 +1,4 @@
-# voice-ime Input Tasks
+# exomind-model Input Tasks
 
 > 更新日期: 2026-01-29 15:00
 > 来源: 日记 2026-01-29 + Ralph Loop 迭代
@@ -13,7 +13,7 @@
 ```
 用户/Agent
     ↓ HTTP API (1921)
-voice-ime (1921)
+exomind-model (1921)
     ├── ASR 语音识别 → 文字
     └── TTS 语音合成 ← 文字
 ```
@@ -66,7 +66,7 @@ voice-ime (1921)
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                  voice-ime (1921)                       │
+│                  exomind-model (1921)                       │
 ├─────────────────────────────────────────────────────────┤
 │  服务层                                                │
 │  ├── /health (健康检查)                                │
@@ -136,7 +136,7 @@ voice-ime (1921)
 
 | 服务 | 端口 | 说明 |
 |------|------|------|
-| voice-ime | **1921** | 主服务端口 |
+| exomind-model | **1921** | 主服务端口 |
 | exomind-web | 1949 | 网页入口 |
 
 ---
@@ -147,14 +147,14 @@ voice-ime (1921)
 
 | 项目 | 内容 |
 |------|------|
-| **时间戳** | `## HH:MM [小荷] voice-ime 迭代总结` |
+| **时间戳** | `## HH:MM [小荷] exomind-model 迭代总结` |
 | **字数限制** | 100字以内 |
 | **记录内容** | 本轮完成的任务、变更的文件、核心产出 |
 | **日记路径** | `~/ExoMind-Obsidian-HailayLin/2-个人状态与历史记录/日记/YYYY-MM-DD.md` |
 
 **示例**：
 ```markdown
-## 14:30 [小荷] voice-ime 迭代总结
+## 14:30 [小荷] exomind-model 迭代总结
 
 完成 FastAPI 服务开发（1921端口），28/28 测试通过。实现 ASR/TTS 端点。启动隐私保护网关 MVP 开发。
 ```
@@ -178,7 +178,7 @@ voice-ime (1921)
 每个项目必须包含 README.md，确保用户能快速跑起来：
 
 ```markdown
-# voice-ime
+# exomind-model
 
 > 语音输入输出引擎，提供 ASR/TTS API 接口
 
@@ -206,8 +206,8 @@ uv run pytest
 
 ### 部署（systemd 服务）
 ```bash
-systemctl --user enable voice-ime
-systemctl --user start voice-ime
+systemctl --user enable exomind-model
+systemctl --user start exomind-model
 ```
 
 ## API 文档
@@ -221,7 +221,7 @@ systemctl --user start voice-ime
 ## 项目结构
 
 ```
-voice-ime/
+exomind-model/
 ├── service/          # FastAPI 服务
 ├── asr/              # ASR 引擎
 ├── tts/              # TTS 引擎

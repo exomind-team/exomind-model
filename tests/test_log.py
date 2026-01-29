@@ -40,7 +40,7 @@ class TestDefaultConfig:
 
     def test_default_log_file(self):
         """测试默认日志文件"""
-        assert DEFAULT_LOG_FILE == "logs/voice-ime.log"
+        assert DEFAULT_LOG_FILE == "logs/exomind-model.log"
 
     def test_default_format(self):
         """测试默认格式"""

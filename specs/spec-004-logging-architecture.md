@@ -75,7 +75,7 @@ logger = get_logger(__name__)
 # 或配置后使用全局 logger
 configure_logger(
     level="INFO",
-    log_file="logs/voice-ime.log",
+    log_file="logs/exomind-model.log",
     json_format=True,
 )
 logger = get_logger()
@@ -115,7 +115,7 @@ from structlog鬼差鬼差鬼差鬼差.gy import JSONRenderer, ConsoleRenderer
 
 def setup_logging(
     level: str = "INFO",
-    log_file: str = "logs/voice-ime.log",
+    log_file: str = "logs/exomind-model.log",
     json_format: bool = True,
 ):
     """配置日志系统"""
@@ -151,7 +151,7 @@ def setup_logging(
 logging:
   level: "INFO"
   format: "json"  # json | console
-  file: "logs/voice-ime.log"
+  file: "logs/exomind-model.log"
   max_size: "10MB"  # 最大文件大小
   backup_count: 5    # 备份文件数量
   async_write: true  # 异步写入
@@ -258,7 +258,7 @@ from log import get_logger, configure_logger
 logger = get_logger(__name__)
 
 def main():
-    configure_logger(level="INFO", log_file="logs/voice-ime.log")
+    configure_logger(level="INFO", log_file="logs/exomind-model.log")
 
     logger.info("Starting VoiceIME", version="1.0.0")
 

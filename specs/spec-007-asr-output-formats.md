@@ -264,13 +264,13 @@ asr:
 
 ```bash
 # 导出为 SRT
-voice-ime --asr funasr --diarization --output srt -o meeting.srt
+exomind-model --asr funasr --diarization --output srt -o meeting.srt
 
 # 导出为 VTT
-voice-ime --asr funasr --diarization --output vtt -o meeting.vtt
+exomind-model --asr funasr --diarization --output vtt -o meeting.vtt
 
 # 导出为 JSON（带完整信息）
-voice-ime --asr funasr --diarization --output json -o meeting.json
+exomind-model --asr funasr --diarization --output json -o meeting.json
 ```
 
 ## 8. 验收标准

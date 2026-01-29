@@ -282,7 +282,7 @@ print(response.json())
 
 ---
 
-## 7. 在 voice-ime 中的使用
+## 7. 在 exomind-model 中的使用
 
 ### 7.1 环境配置
 
@@ -349,7 +349,7 @@ curl -X POST "https://studio.mosi.cn/v1/audio/transcriptions" \
 - **MOSS Studio**: https://studio.mosi.cn
 - **API 文档**: https://studio.mosi.cn/docs/moss-transcribe-diarize
 - **控制台**: https://studio.mosi.cn/console
-- **voice-ime 客户端**: `asr/moss_client.py`
+- **exomind-model 客户端**: `asr/moss_client.py`
 - **联系邮箱**: mosi@mosi.cn
 
 ---

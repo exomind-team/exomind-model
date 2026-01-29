@@ -220,13 +220,13 @@ asr:
 
 ```bash
 # 启用流式模式
-voice-ime --asr nano-2512 --streaming
+exomind-model --asr nano-2512 --streaming
 
 # 指定音频片段大小
-voice-ime --asr nano-2512 --streaming --chunk-size 100
+exomind-model --asr nano-2512 --streaming --chunk-size 100
 
 # 禁用流式（离线模式）
-voice-ime --asr nano-2512 --no-streaming
+exomind-model --asr nano-2512 --no-streaming
 ```
 
 ## 6. 性能指标

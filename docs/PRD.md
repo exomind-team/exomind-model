@@ -218,7 +218,7 @@ MOSS_API_KEY=sk-xxx
 ### 5.2 目录结构
 
 ```
-1-Projects/voice-ime/
+1-Projects/exomind-model/
 ├── voice_ime.py          # 主程序（精简，调用引擎）
 ├── test_voice_ime.py     # 主测试文件
 ├── test_funasr.py        # FunASR 专项测试

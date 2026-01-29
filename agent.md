@@ -75,7 +75,7 @@ uv run python voice_ime.py --help
 uv run python -m service.main
 
 # systemd 服务
-systemctl --user start voice-ime
+systemctl --user start exomind-model
 ```
 
 ### 部署后测试
@@ -122,12 +122,12 @@ gh pr create --title "feat: FastAPI 服务实现" --body "..."
 uv run python -m service.main
 
 # 服务模式（用户级 systemd）
-systemctl --user start voice-ime
-systemctl --user enable voice-ime
+systemctl --user start exomind-model
+systemctl --user enable exomind-model
 
 # 服务管理
-systemctl --user status voice-ime
-journalctl --user -u voice-ime -f
+systemctl --user status exomind-model
+journalctl --user -u exomind-model -f
 
 # 部署后测试
 curl http://localhost:1921/health
@@ -146,7 +146,7 @@ curl http://localhost:1921/v1/docs/agent
 
 ```
 
-### voice-ime 项目定位
+### exomind-model 项目定位
 
 | 职责 | 说明 |
 |------|------|
@@ -158,7 +158,7 @@ curl http://localhost:1921/v1/docs/agent
 ### ExoMind 整合（来自日记 2026-01-29）
 
 **四项核心任务**：
-1. **全部集成到一个网页** - voice-ime 提供 ASR/TTS API
+1. **全部集成到一个网页** - exomind-model 提供 ASR/TTS API
 2. **有生命的Agent** - 能量额度反馈，参考 MiniMax Agent
 3. **最优先实现资源监控** - `/v1/admin/status` 端点
 4. **代码库集体贡献上传** - Git submodule 管理
@@ -166,7 +166,7 @@ curl http://localhost:1921/v1/docs/agent
 **关联项目路径**：
 | 项目 | 路径 |
 |------|------|
-| VoiceIME | `voice-ime/` (当前) |
+| VoiceIME | `exomind-model/` (当前) |
 | ExoMind | `ExoMind-Team/modules/Projects/exomind/` |
 | ExoBuffer | `ExoMind-Team/modules/Projects/ExoBuffer/` |
 
@@ -186,7 +186,7 @@ curl http://localhost:1921/v1/docs/agent
 | **PRD.md** | P1 | 详细需求（技术规格、任务清单） | 月度更新 |
 
 **input.md 更新流程**：
-1. 小荷读取日记，提取 voice-ime 相关任务
+1. 小荷读取日记，提取 exomind-model 相关任务
 2. 追加到 `pm/input.md`
 3. Ralph Loop Agent 读取 `input.md` 执行任务
 
@@ -201,7 +201,7 @@ curl http://localhost:1921/v1/docs/agent
 ### 文件结构规范
 
 ```
-voice-ime/
+exomind-model/
 ├── asr/           # ASR 引擎模块
 ├── tts/           # TTS 引擎模块
 ├── config/        # 配置模块
@@ -298,7 +298,7 @@ voice-ime/
 │                                                               │
 │   • curl / HTTP 请求                                           │
 │   • Python SDK (后续生成)                                      │
-│   • TypeScript 前端 (独立项目 voice-ime-web)                   │
+│   • TypeScript 前端 (独立项目 exomind-model-web)                   │
 │   • 大模型 / Agent (通过 /v1/docs/agent)                       │
 │                                                               │
 └─────────────────────────────────────────────────────────────────┘
@@ -372,7 +372,7 @@ VOICE_IME_AUTO_PASTE=true
 ## 🔧 核心代码结构
 
 ```
-voice-ime/
+exomind-model/
 ├── voice_ime.py      # 主程序
 │   ├── Recorder      # 录音模块
 │   ├── MossClient    # API 客户端

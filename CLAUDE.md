@@ -17,7 +17,7 @@ This file provides guidance to Claude Code when working with code in this reposi
 ### 目录结构
 
 ```
-voice-ime/
+exomind-model/
 ├── pm/                    # 项目管理目录
 │   ├── agent.md           # Agent 身份 + Ralph Loop 流程 ⭐
 │   ├── input.md           # 任务队列（最高优先级）
@@ -74,7 +74,7 @@ voice-ime/
 
 **启动 Ralph Loop**：
 ```bash
-cd voice-ime && /ralph-loop
+cd exomind-model && /ralph-loop
 ```
 
 ### 核心文件索引
@@ -106,10 +106,10 @@ uv run python voice_ime.py --help
 uv run python -m service.main
 
 # 服务管理
-systemctl --user start voice-ime
-systemctl --user enable voice-ime
-systemctl --user status voice-ime
-journalctl --user -u voice-ime -f
+systemctl --user start exomind-model
+systemctl --user enable exomind-model
+systemctl --user status exomind-model
+journalctl --user -u exomind-model -f
 
 # API 测试
 curl http://localhost:1921/health
@@ -120,7 +120,7 @@ curl http://localhost:1921/v1/docs/agent
 
 | 项目 | 路径 | 说明 |
 |------|------|------|
-| VoiceIME | `voice-ime/` | 当前项目 |
+| VoiceIME | `exomind-model/` | 当前项目 |
 | ExoMind | `ExoMind-Team/modules/Projects/exomind/` | 主项目 |
 | ExoBuffer | `ExoMind-Team/modules/Projects/ExoBuffer/` | 消息队列 |
 

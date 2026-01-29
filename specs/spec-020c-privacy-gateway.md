@@ -141,7 +141,7 @@ Response:
 
 | 组件 | 选择 | 说明 |
 |------|------|------|
-| 框架 | FastAPI | 与 voice-ime 服务兼容 |
+| 框架 | FastAPI | 与 exomind-model 服务兼容 |
 | PII 检测 | Microsoft Presidio + MiniRBT | 本地 NER |
 | 加密 | cryptography (AES-256) | Python 标准库 |
 | 映射存储 | SQLite + 内存缓存 | 轻量级本地存储 |
@@ -325,15 +325,15 @@ def verify_restore_accuracy():
 | 映射表损坏 | 从原始备份恢复 |
 | 加密密钥丢失 | 无法恢复（安全设计） |
 
-## 6. 与 voice-ime 集成
+## 6. 与 exomind-model 集成
 
 ### 6.1 集成点
 
 ```
-voice-ime API 调用流程（集成隐私网关后）:
+exomind-model API 调用流程（集成隐私网关后）:
 
 ┌─────────────────────────────────────────────────────────────────┐
-│                        voice-ime client                          │
+│                        exomind-model client                          │
 └─────────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────────┐
@@ -355,7 +355,7 @@ voice-ime API 调用流程（集成隐私网关后）:
 └─────────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────────┐
-│                        voice-ime client                          │
+│                        exomind-model client                          │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -377,7 +377,7 @@ class PrivacyGatewaySettings(BaseSettings):
     encryption_key: Optional[str] = None  # 从环境变量读取
 
     # 存储配置
-    token_store_path: str = "~/.cache/voice-ime/pii_tokens.db"
+    token_store_path: str = "~/.cache/exomind-model/pii_tokens.db"
 
     # 启用控制
     enabled: bool = False  # 默认关闭，需手动启用
@@ -433,7 +433,7 @@ class PrivacyGatewaySettings(BaseSettings):
 - [ ] 实现 MVP 版本（正则 + 简单映射）
 - [ ] 集成 MiniRBT 模型
 - [ ] 端到端测试
-- [ ] 与 voice-ime API 集成
+- [ ] 与 exomind-model API 集成
 
 ---
 

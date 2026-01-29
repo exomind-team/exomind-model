@@ -11,7 +11,7 @@ from pathlib import Path
 
 # 动态添加项目根目录到 sys.path（确保在 tests 目录之前）
 FILE = Path(__file__).resolve()
-ROOT = FILE.parents[2] / "voice-ime"
+ROOT = FILE.parents[2] / "exomind-model"
 
 # 将 ROOT 放到 sys.path 最前面，覆盖 pytest 添加的 tests 目录
 if str(ROOT) in sys.path:

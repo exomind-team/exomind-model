@@ -24,7 +24,7 @@ AGENT_DOCUMENTATION = {
         "capabilities": ["asr", "tts", "voice_comparison"]
     },
     "quick_start": {
-        "installation": "pip install voice-ime",
+        "installation": "pip install exomind-model",
         "import": "from voiceime import VoiceIMEClient",
         "minimal_example": "await client.transcribe('audio.wav')"
     },

@@ -351,16 +351,16 @@ VOICE_IME_FORCE_ENGINE=nano-2512
 
 ```bash
 # 显示选择解释
-voice-ime --explain-engine
+exomind-model --explain-engine
 
 # 禁用智能选择
-voice-ime --no-smart-select
+exomind-model --no-smart-select
 
 # 强制使用指定引擎
-voice-ime --engine nano-2512
+exomind-model --engine nano-2512
 
 # 设置场景模式
-voice-ime --scenario meeting
+exomind-model --scenario meeting
 ```
 
 ## 6. 增强 ASRClientFactory

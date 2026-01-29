@@ -23,19 +23,19 @@
 
 ```bash
 # 启用智能选择模式
-voice-ime --smart
+exomind-model --smart
 
 # 智能选择 + 显示选择解释
-voice-ime --smart --explain
+exomind-model --smart --explain
 
 # 智能选择 + 指定场景
-voice-ime --smart --scenario meeting
+exomind-model --smart --scenario meeting
 
 # 智能选择 + 指定优先级
-voice-ime --smart --priority latency
+exomind-model --smart --priority latency
 
 # 组合使用
-voice-ime --smart --explain --scenario realtime
+exomind-model --smart --explain --scenario realtime
 ```
 
 ### 3.2 参数详情
@@ -64,7 +64,7 @@ voice-ime --smart --explain --scenario realtime
 
 ```bash
 # 自动根据场景选择最佳引擎
-voice-ime --smart
+exomind-model --smart
 
 # 输出示例:
 # 🎯 智能选择: nano-2512
@@ -78,7 +78,7 @@ voice-ime --smart
 
 ```bash
 # 会议记录，自动选择支持说话人分离的引擎
-voice-ime --smart --scenario meeting --explain
+exomind-model --smart --scenario meeting --explain
 
 # 输出示例:
 # 🎯 智能选择: paraformer-zh
@@ -92,7 +92,7 @@ voice-ime --smart --scenario meeting --explain
 
 ```bash
 # 长文本转写，准确率优先
-voice-ime --smart --priority accuracy
+exomind-model --smart --priority accuracy
 
 # 输出示例:
 # 🎯 智能选择: sensevoice

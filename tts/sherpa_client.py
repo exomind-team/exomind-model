@@ -79,7 +79,7 @@ class SherpaTTSClient(TTSClient):
         # 在多个可能的位置查找
         search_paths = [
             Path("models") / model,
-            Path("/home/hailay/ExoMind-Obsidian-HailayLin/1-Projects/voice-ime/models") / model,
+            Path("/home/hailay/ExoMind-Obsidian-HailayLin/1-Projects/exomind-model/models") / model,
             Path(f"models/{model}"),
         ]
 
@@ -154,7 +154,7 @@ class SherpaTTSClient(TTSClient):
             possible_data_dirs = [
                 Path(self._model_dir) / "espeak-ng-data",
                 Path("/usr/share/espeak-ng-data"),
-                Path("/home/hailay/ExoMind-Obsidian-HailayLin/1-Projects/voice-ime/models/kokoro-multi-lang-v1_1/espeak-ng-data"),
+                Path("/home/hailay/ExoMind-Obsidian-HailayLin/1-Projects/exomind-model/models/kokoro-multi-lang-v1_1/espeak-ng-data"),
             ]
             for d in possible_data_dirs:
                 if d.exists():

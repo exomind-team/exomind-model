@@ -2,7 +2,7 @@
 
 > 版本：v1.0
 > 创建时间：2026-01-29
-> 作者：voice-ime Agent
+> 作者：exomind-model Agent
 > 状态：已实现
 
 ## 概述
@@ -193,7 +193,7 @@ Agent 专用文档端点，返回可供大模型理解的结构化文档。
     "capabilities": ["asr", "tts", "voice_comparison"]
   },
   "quick_start": {
-    "installation": "pip install voice-ime",
+    "installation": "pip install exomind-model",
     "import": "from voiceime import VoiceIMEClient",
     "minimal_example": "await client.transcribe('audio.wav')"
   },

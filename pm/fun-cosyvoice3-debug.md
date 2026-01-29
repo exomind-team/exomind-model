@@ -11,7 +11,7 @@
 | 组件 | 版本 | 说明 |
 |------|------|------|
 | Python | 3.11 | |
-| PyTorch | 2.10.0+cpu | voice-ime 虚拟环境 (CPU only) |
+| PyTorch | 2.10.0+cpu | exomind-model 虚拟环境 (CPU only) |
 | Fun-CosyVoice3 | 0.5B | 模型路径: `/home/hailay/rocm-install/CosyVoice/pretrained_models/Fun-CosyVoice3-0.5B` |
 
 ### 另一个 ROCm 环境

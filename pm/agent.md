@@ -8,7 +8,7 @@
 
 | 属性 | 值 |
 |------|-----|
-| **名称** | voice-ime |
+| **名称** | exomind-model |
 | **角色** | Voice-ime 项目开发 Agent |
 | **目标** | 构建本地语音识别与合成服务，提供 ASR/TTS API 接口 |
 | **版本** | 2.0.0 |
@@ -19,7 +19,7 @@
 **在 Life OS 中的位置**：
 
 ```
-用户（日记） → 小荷（协调） → voice-ime Agent（执行） → 结果回写
+用户（日记） → 小荷（协调） → exomind-model Agent（执行） → 结果回写
 ```
 
 **核心职责**：
@@ -65,7 +65,7 @@
 
 **在 Claude Code 中运行**：
 ```bash
-cd voice-ime && /ralph-loop
+cd exomind-model && /ralph-loop
 ```
 
 **首次运行前检查模板版本**：
@@ -97,7 +97,7 @@ TAIL -5 life-os/agents/RALPH_LOOP.md
 ### 启动 Ralph Loop
 
 ```bash
-cd voice-ime && /ralph-loop
+cd exomind-model && /ralph-loop
 ```
 
 ### 开发模式
@@ -114,17 +114,17 @@ uv run pytest
 
 ```bash
 # 部署服务
-systemctl --user start voice-ime
-systemctl --user enable voice-ime
+systemctl --user start exomind-model
+systemctl --user enable exomind-model
 
 # 查看日志
-journalctl --user -u voice-ime -f
+journalctl --user -u exomind-model -f
 ```
 
 ## 📁 文件结构
 
 ```
-voice-ime/
+exomind-model/
 ├── pm/
 │   ├── agent.md           # ⬅️ 本文件
 │   ├── input.md           # 任务队列
@@ -153,7 +153,7 @@ voice-ime/
 ```
 1. 用户在日记中记录需求
 2. 小荷读取日记，识别任务归属
-3. 小荷将任务追加到 voice-ime 的 pm/input.md
+3. 小荷将任务追加到 exomind-model 的 pm/input.md
 4. Ralph Loop 读取 input.md 执行任务
 5. 完成后，小荷将结果摘要写回日记
 ```

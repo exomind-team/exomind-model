@@ -110,7 +110,7 @@ def test_global_config():
     print(f"调试模式: {config.global_settings.debug}")
 
     assert config.global_settings.log_level in ["DEBUG", "INFO", "WARNING", "ERROR"]
-    assert "voice-ime.log" in config.global_settings.log_file
+    assert "exomind-model.log" in config.global_settings.log_file
 
     print("\n[通过] 全局配置测试成功")
     return True

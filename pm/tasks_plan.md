@@ -296,7 +296,7 @@
 
 ## 🎯 Ralph Loop 完成承诺
 
-> **承诺**: 'voice-ime FunASR and MOSS integration complete and usable'
+> **承诺**: 'exomind-model FunASR and MOSS integration complete and usable'
 >
 > **状态**: ✅ 已交付
 > **交付时间**: 2026-01-27 13:55

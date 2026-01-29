@@ -60,9 +60,9 @@ global:
   # 日志级别: DEBUG | INFO | WARNING | ERROR
   log_level: "INFO"
   # 日志文件路径
-  log_file: "logs/voice-ime.log"
+  log_file: "logs/exomind-model.log"
   # 临时文件目录
-  temp_dir: "/tmp/voice-ime"
+  temp_dir: "/tmp/exomind-model"
 
 # 录音配置
 recorder:
@@ -119,8 +119,8 @@ class TTSConfig:
 @dataclass
 class GlobalConfig:
     log_level: str = "INFO"
-    log_file: str = "logs/voice-ime.log"
-    temp_dir: str = "/tmp/voice-ime"
+    log_file: str = "logs/exomind-model.log"
+    temp_dir: str = "/tmp/exomind-model"
 
 @dataclass
 class RecorderConfig:
@@ -207,8 +207,8 @@ class ConfigLoader:
             ),
             global_settings=GlobalConfig(
                 log_level=global_cfg.get('log_level', 'INFO'),
-                log_file=global_cfg.get('log_file', 'logs/voice-ime.log'),
-                temp_dir=global_cfg.get('temp_dir', '/tmp/voice-ime'),
+                log_file=global_cfg.get('log_file', 'logs/exomind-model.log'),
+                temp_dir=global_cfg.get('temp_dir', '/tmp/exomind-model'),
             ),
             recorder=RecorderConfig(
                 sample_rate=recorder_cfg.get('sample_rate', 16000),

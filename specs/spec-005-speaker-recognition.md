@@ -37,7 +37,7 @@
 ### 4.1 模块结构
 
 ```
-voice-ime/
+exomind-model/
 ├── speaker/                      # 声纹识别模块
 │   ├── __init__.py
 │   ├── base.py                   # SpeakerClient 抽象基类

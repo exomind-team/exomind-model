@@ -48,7 +48,7 @@ class TestConfigClasses:
         """测试全局默认配置"""
         config = GlobalConfig()
         assert config.log_level == "INFO"
-        assert config.temp_dir == "/tmp/voice-ime"
+        assert config.temp_dir == "/tmp/exomind-model"
         assert config.debug is False
 
     def test_recorder_config_defaults(self):

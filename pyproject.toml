@@ -1,5 +1,5 @@
 [project]
-name = "voice-ime"
+name = "exomind-model"
 version = "1.0.0"
 description = "VoiceIME - 语音输入工具，支持全局快捷键录音和云端 ASR API"
 readme = "README.md"

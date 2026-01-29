@@ -10,7 +10,7 @@ from pathlib import Path
 
 # 动态添加项目根目录到 sys.path（确保在 tests 目录之前）
 FILE = Path(__file__).resolve()
-ROOT = FILE.parents[2] / "voice-ime"
+ROOT = FILE.parents[2] / "exomind-model"
 if str(ROOT) in sys.path:
     sys.path.remove(str(ROOT))
 sys.path.insert(0, str(ROOT))

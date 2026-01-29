@@ -232,10 +232,10 @@ asr:
 
 ```bash
 # 启用说话人分离
-voice-ime --asr funasr --diarization
+exomind-model --asr funasr --diarization
 
 # 指定说话人数
-voice-ime --asr funasr --diarization --num-speakers 3
+exomind-model --asr funasr --diarization --num-speakers 3
 ```
 
 ## 7. 输出格式

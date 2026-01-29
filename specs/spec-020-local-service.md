@@ -755,11 +755,11 @@ After=network.target
 [Service]
 Type=simple
 User=hailay
-WorkingDirectory=/home/hailay/ExoMind-Obsidian-HailayLin/1-Projects/voice-ime
+WorkingDirectory=/home/hailay/ExoMind-Obsidian-HailayLin/1-Projects/exomind-model
 ExecStart=/home/hailay/.venv/bin/uvicorn voiceime.service:app --host 0.0.0.0 --port 8000 --workers 4
 Restart=always
 RestartSec=5
-Environment=VOICEIME_MODELS_PATH=/home/hailay/ExoMind-Obsidian-HailayLin/1-Projects/voice-ime/models
+Environment=VOICEIME_MODELS_PATH=/home/hailay/ExoMind-Obsidian-HailayLin/1-Projects/exomind-model/models
 
 # 资源限制
 MemoryMax=8G
@@ -826,7 +826,7 @@ server {
 
     # 静态文件
     location /static/ {
-        alias /home/hailay/ExoMind-Obsidian-HailayLin/1-Projects/voice-ime/web/dist/;
+        alias /home/hailay/ExoMind-Obsidian-HailayLin/1-Projects/exomind-model/web/dist/;
     }
 }
 ```

@@ -47,8 +47,8 @@ class TTSConfig:
 class GlobalConfig:
     """全局配置"""
     log_level: str = "INFO"
-    log_file: str = "logs/voice-ime.log"
-    temp_dir: str = "/tmp/voice-ime"
+    log_file: str = "logs/exomind-model.log"
+    temp_dir: str = "/tmp/exomind-model"
     debug: bool = False
 
 
@@ -229,8 +229,8 @@ class ConfigLoader:
             ),
             global_settings=GlobalConfig(
                 log_level=global_cfg.get('log_level', 'INFO'),
-                log_file=global_cfg.get('log_file', 'logs/voice-ime.log'),
-                temp_dir=global_cfg.get('temp_dir', '/tmp/voice-ime'),
+                log_file=global_cfg.get('log_file', 'logs/exomind-model.log'),
+                temp_dir=global_cfg.get('temp_dir', '/tmp/exomind-model'),
                 debug=global_cfg.get('debug', False),
             ),
             recorder=RecorderConfig(
