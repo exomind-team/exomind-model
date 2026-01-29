@@ -1,0 +1,25 @@
+[Unit]
+Description=Voice-ime FastAPI Service
+Documentation=https://github.com/Hailaylin/ExoMind-Obsidian-HailayLin/tree/master/1-Projects/voice-ime
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/ExoMind-Obsidian-HailayLin/1-Projects/voice-ime
+ExecStart=%h/.local/bin/uv run python -m service.main
+Restart=always
+RestartSec=10
+Environment="PATH=%h/.local/bin:/usr/bin:/bin"
+Environment="UV_SYSTEM_PYTHON=1"
+
+# 资源限制
+MemoryMax=4G
+MemoryHigh=3G
+
+# 日志配置
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=voice-ime
+
+[Install]
+WantedBy=default.target

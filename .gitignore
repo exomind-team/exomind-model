@@ -1,0 +1,112 @@
+# ============================================
+# Voice-ime 项目 .gitignore
+# ============================================
+
+# -------- Python 标准忽略 --------
+.venv/
+.venv-cpu/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+*.pyc
+*.pyo
+
+# -------- uv / pip --------
+.uv/
+.uv/
+ruff_cache/
+.uv_cache/
+
+# -------- IDE --------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+ Thumbs.db
+
+# -------- 测试与覆盖率 --------
+.pytest_cache/
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+nosetests.xml
+.hypothesis/
+
+# -------- 类型检查 --------
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+
+# -------- 日志与临时文件 --------
+logs/
+log/
+*.log
+
+# -------- 音频输出（可重新生成）--------
+*.wav
+*.mp3
+*.flac
+*.ogg
+output_*.wav
+tts_output/
+sherpa_output/
+
+# -------- 模型文件（Large files）--------
+models/
+!models/.gitkeep
+
+# -------- 配置文件 --------
+.env
+.env.local
+.env.*
+config.yaml
+
+# -------- 归档文件 --------
+.archive/
+.trash/
+*.bak
+
+# -------- 其他 --------
+*.tmp
+*.temp
+temp/
+tmp/
+~
+*.orig
+*.rej
+
+# -------- Voice-ime 特定 --------
+
+# TTS 测试脚本（实验性质）
+tts_*.py
+test_rocm*.py
+mvp_voice_test.py
+
+# 性能测试报告
+performance_*.py
+performance_*.md
+
+# 临时音频文件
+output_*.wav
+output_*.mp3
+
+# 开发笔记
+*.notes
+*.draft
+
+# -------- 保留必要的空目录 --------
+# 通过添加 .gitkeep 文件保留以下目录结构
+# models/
+# tests/

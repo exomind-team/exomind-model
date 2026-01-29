@@ -1,0 +1,13 @@
+# VoiceIME 语音输入工具依赖
+requests>=2.28.0
+sounddevice>=0.4.0
+numpy>=1.20.0
+keyboard>=0.13.0
+funasr>=1.0.0  # FunASR 本地语音识别
+
+# FunASR 依赖 (PyTorch CPU 版本)
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# 可选依赖
+pyaudio>=0.2.0  # 用于播放提示音（Windows/macOS）
