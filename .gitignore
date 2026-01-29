@@ -64,8 +64,12 @@ tts_output/
 sherpa_output/
 
 # -------- 模型文件（Large files）--------
-models/
+
+# 仅忽略根目录的 models/（AI 模型文件）
+# 不忽略 service/models/（这是 Python 代码目录）
+/models/
 !models/.gitkeep
+!service/models/
 
 # -------- 配置文件 --------
 .env
