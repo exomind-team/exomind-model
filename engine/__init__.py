@@ -23,7 +23,7 @@ Usage:
 """
 
 from enum import Enum
-from typing import Dict, List, Optional, Type, Union, Any
+from typing import Dict, List, Optional, Type, Union, Any, Callable
 from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
 
@@ -34,8 +34,23 @@ ROOT = FILE.parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from asr.factory import ASRClientFactory
-from tts.factory import TTSClientFactory
+# 延迟导入工厂（避免 sherpa_onnx 依赖问题）
+_ASRClientFactory = None
+_TTSClientFactory = None
+
+def _get_asr_factory():
+    global _ASRClientFactory
+    if _ASRClientFactory is None:
+        from asr.factory import ASRClientFactory
+        _ASRClientFactory = ASRClientFactory
+    return _ASRClientFactory
+
+def _get_tts_factory():
+    global _TTSClientFactory
+    if _TTSClientFactory is None:
+        from tts.factory import TTSClientFactory
+        _TTSClientFactory = TTSClientFactory
+    return _TTSClientFactory
 
 
 class EngineType(Enum):
@@ -110,9 +125,10 @@ class EngineManager:
             EngineType.TTS: {},
             EngineType.SPEAKER: {},
         }
-        self._factories: Dict[EngineType, Any] = {
-            EngineType.ASR: ASRClientFactory,
-            EngineType.TTS: TTSClientFactory,
+        # 使用延迟加载的工厂
+        self._factories: Dict[EngineType, Callable] = {
+            EngineType.ASR: _get_asr_factory,
+            EngineType.TTS: _get_tts_factory,
         }
 
         # 自动注册已知的引擎
@@ -196,11 +212,12 @@ class EngineManager:
         """列出指定类型的所有引擎信息"""
         engines = []
         for name, config in self._configs[engine_type].items():
-            factory = self._factories.get(engine_type)
+            factory_func = self._factories.get(engine_type)
             available = False
 
-            if factory and engine_type in [EngineType.ASR, EngineType.TTS]:
+            if factory_func and engine_type in [EngineType.ASR, EngineType.TTS]:
                 try:
+                    factory = factory_func()  # 调用工厂函数获取实际工厂类
                     available = factory.is_available(name) if hasattr(factory, 'is_available') else True
                 except Exception:
                     available = False
@@ -265,8 +282,9 @@ class EngineManager:
                 if key not in kwargs:
                     kwargs[key] = value
 
-        factory = self._factories.get(engine_type)
-        if factory:
+        factory_func = self._factories.get(engine_type)
+        if factory_func:
+            factory = factory_func()  # 调用工厂函数获取实际工厂类
             return factory.create(name, **kwargs)
 
         raise ValueError(f"Unknown engine type: {engine_type}")

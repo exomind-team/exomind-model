@@ -48,7 +48,7 @@ exomind-model (1921)
 |------|------|------|
 | 流式 ASR | ✅ | 实时转写 |
 | 说话人分离 | ✅ | CAM++ diarization API |
-| 多引擎支持 | ⏳ | FunASR / Sherpa-ONNX |
+| 多引擎支持 | ✅ | EngineManager API 端点 |
 | 音色扩展 | ⏳ | 更多 TTS 音色 |
 
 
@@ -107,6 +107,14 @@ exomind-model (1921)
 | 说话人分离 | ✅ | CAM++ 引擎 + API 端点 `/v1/speaker/diarize` |
 | 代码重构 | ✅ | 文档同步更新 |
 
+### 迭代15（已完成 ✅）
+
+| 任务 | 状态 | 说明 |
+|------|------|------|
+| 多引擎 API | ✅ | EngineManager API 端点 `/v1/engine/*` |
+| 路由调整 | ✅ | 修复 FastAPI 路由冲突 |
+| 测试覆盖 | ✅ | 47/47 测试通过 |
+
 ---
 
 ## 模型支持状态
@@ -132,6 +140,12 @@ exomind-model (1921)
 | `/v1/speaker/diarize` | POST | 说话人分离 |
 | `/v1/speaker/engines` | GET | 列出引擎 |
 | `/v1/speaker/health/{engine}` | GET | 引擎健康检查 |
+| `/v1/engine` | GET | 列出所有引擎 |
+| `/v1/engine/asr` | GET | 列出 ASR 引擎 |
+| `/v1/engine/tts` | GET | 列出 TTS 引擎 |
+| `/v1/engine/default/{type}` | GET | 获取默认引擎 |
+| `/v1/engine/{type}/{name}` | GET | 获取引擎详情 |
+| `/v1/engine/switch/{type}` | POST | 切换引擎 |
 | `/v1/docs/agent` | GET | Agent 专用文档 ⭐ |
 | `/docs` | GET | Swagger UI |
 

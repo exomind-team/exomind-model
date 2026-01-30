@@ -20,7 +20,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
 
 from service.config import settings
-from service.api import asr_router, tts_router, admin_router, docs_router, speaker_router
+from service.api import asr_router, tts_router, admin_router, docs_router, speaker_router, engine_router
 from service.models.response import HealthResponse
 
 
@@ -62,6 +62,7 @@ app.include_router(tts_router)
 app.include_router(admin_router)
 app.include_router(docs_router)
 app.include_router(speaker_router)
+app.include_router(engine_router)
 
 
 @app.get("/", tags=["Root"])

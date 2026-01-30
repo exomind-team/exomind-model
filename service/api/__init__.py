@@ -5,6 +5,7 @@ from .tts import router as tts_router
 from .admin import router as admin_router
 from .docs import router as docs_router
 from .speaker import router as speaker_router
+from .engine import router as engine_router
 
 __all__ = [
     "asr_router",
@@ -12,4 +13,5 @@ __all__ = [
     "admin_router",
     "docs_router",
     "speaker_router",
+    "engine_router",
 ]
