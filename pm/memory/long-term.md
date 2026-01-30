@@ -1,8 +1,8 @@
 # Voice-ime 长期记忆
 
-> 版本：v1.7
+> 版本：v1.8
 > 创建时间：2026-01-27
-> 更新时间：2026-01-29 14:40
+> 更新时间：2026-01-30 18:45
 > Agent：exomind-model
 > 说明：记录项目经验、技术决策、踩坑记录
 
@@ -640,6 +640,28 @@ curl http://localhost:1921/v1/docs/agent
   - `/v1/asr/stream/transcribe` → 新增流式端点
 - **变更文件**: `service/api/asr.py` (+165 行)
 - **测试状态**: 待运行 pytest
+
+### D-16: 说话人分离 API 集成
+- **日期**: 2026-01-30
+- **决策**: 独立 `/v1/speaker/*` 端点，使用 CAM++ 引擎
+- **实现**:
+  - `POST /v1/speaker/diarize` → 说话人分离主端点
+  - `GET /v1/speaker/engines` → 列出可用引擎
+  - `GET /v1/speaker/health/{engine}` → 引擎健康检查
+- **变更文件**:
+  - `service/api/speaker.py` (新增，+107 行)
+  - `service/models/request.py` (+18 行，SpeakerDiarizeRequest)
+  - `service/models/response.py` (+18 行，SpeakerDiarizeResult)
+  - `service/api/__init__.py` (+2 行，speaker_router)
+  - `service/main.py` (+2 行，导入speaker_router)
+- **测试文件**: `tests/test_speaker_api.py` (新增，+107 行)
+- **测试状态**: 8/8 通过 ✅
+- **API 端点**:
+  | 端点 | 方法 | 描述 |
+  |------|------|------|
+  | `/v1/speaker/diarize` | POST | 说话人分离 |
+  | `/v1/speaker/engines` | GET | 列出引擎 |
+  | `/v1/speaker/health/{engine}` | GET | 引擎健康检查 |
 
 ---
 

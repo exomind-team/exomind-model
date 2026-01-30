@@ -81,3 +81,23 @@ class VoiceFilterRequest(BaseModel):
     language: Optional[str] = None
     page: int = Field(default=1, ge=1)
     limit: int = Field(default=20, ge=1, le=100)
+
+
+class SpeakerEngine(str, Enum):
+    """说话人分离引擎选择"""
+    CAMPLUS = "cam++"
+    MOCK = "mock"
+
+
+class SpeakerDiarizeRequest(BaseModel):
+    """说话人分离请求"""
+    engine: SpeakerEngine = SpeakerEngine.CAMPLUS
+    num_speakers: Optional[int] = Field(default=None, ge=1, le=20)
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "engine": "cam++",
+                "num_speakers": 2
+            }
+        }

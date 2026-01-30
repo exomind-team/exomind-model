@@ -103,3 +103,23 @@ class HealthResponse(BaseModel):
     status: str
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     version: str
+
+
+class SpeakerDiarizeSegment(BaseModel):
+    """说话人分离片段"""
+    speaker_id: str
+    start_time: float
+    end_time: float
+    confidence: float = 1.0
+
+
+class SpeakerDiarizeResult(BaseModel):
+    """说话人分离结果"""
+    success: bool
+    audio_path: Optional[str] = None
+    engine: str
+    num_speakers: int
+    segments: List[SpeakerDiarizeSegment]
+    processing_time_ms: Optional[int] = None
+    metadata: Optional[dict] = None
+    error: Optional[str] = None
